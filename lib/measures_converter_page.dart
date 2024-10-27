@@ -72,7 +72,7 @@ class _MeasuresConverterPageState extends State<MeasuresConverterPage> {
                 isExpanded: true,
                 items: const [
                   DropdownMenuItem(
-                    child: Text(Constants.meters),
+                    child: Text(Constants.miles),
                   )
                 ],
                 onChanged: (val) {},
@@ -87,7 +87,7 @@ class _MeasuresConverterPageState extends State<MeasuresConverterPage> {
                 isExpanded: true,
                 items: const [
                   DropdownMenuItem(
-                    child: Text(Constants.feet),
+                    child: Text(Constants.kilometers),
                   )
                 ],
                 onChanged: (val) {},
@@ -113,9 +113,9 @@ class _MeasuresConverterPageState extends State<MeasuresConverterPage> {
   }
 
   void updateConvertedTextResult() {
-    double? meters = double.tryParse(valueTextCtrl.text);
-    if (meters != null) {
-      streamController.add('$meters meters are ${meters * 3.28084} feet');
+    double? miles = double.tryParse(valueTextCtrl.text);
+    if (miles != null) {
+      streamController.add('$miles miles are ${miles * 1.60934} kilometers');
     } else {
       streamController.add('');
     }
